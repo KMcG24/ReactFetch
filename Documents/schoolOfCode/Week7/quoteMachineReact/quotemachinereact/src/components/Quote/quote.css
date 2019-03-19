@@ -1,0 +1,17 @@
+.quoteContainer {
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  /* background-color: aquamarine; */
+  border: 7px solid black;
+  height: 100vh;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.pic {
+  background-image: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/11/16/12/homer-simpson.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
