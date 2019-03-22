@@ -2,6 +2,8 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import css from "./authed.module.css";
+import Stepper from "@material-ui/core/Stepper";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -85,26 +87,23 @@ class Authed extends React.Component {
   render() {
     return (
       <>
-        <div>
+        <div className={css.loading}>
           {this.state.isLoading && "BE PATIENT! IT IS NOW FUCKING LOADING"}
         </div>
 
-        <div>
+        <div className={css.form}>
           {this.state.isLoggedIn
             ? `You are now logged in ${this.state.firstName} ${
                 this.state.lastName
               }`
             : "You are not logged in"}
+        </div>
 
+        <div className={css.emailandpw}>
           {!this.state.isLoggedIn ? (
             <>
               {/* {this.state.secret || <button onClick={this.secret}>Show Secret</button> */}
-
               <form onSubmit={this.login}>
-                <Typography
-                  children="put your info in here"
-                  variant="header4"
-                />
                 <TextField
                   onChange={this.onChange}
                   value={this.state.email}
@@ -121,7 +120,12 @@ class Authed extends React.Component {
                   placeholder="password"
                 />
 
-                <Button size="small" variant="contained" type="submit">
+                <Button
+                  className={css.button}
+                  size="small"
+                  variant="contained"
+                  type="submit"
+                >
                   Log In
                 </Button>
               </form>
@@ -129,7 +133,7 @@ class Authed extends React.Component {
           ) : (
             <>
               <Button onClick={this.showSecret}>Show Secret</Button>
-              <div> {this.state.secret} </div>
+              <div className="secret"> {this.state.secret} </div>
 
               <Button onClick={this.logOut}>Log Out</Button>
             </>

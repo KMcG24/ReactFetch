@@ -1,0 +1,22 @@
+.loading {
+}
+
+.emailandpw {
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  width: 40vw;
+  background-color: antiquewhite;
+  border: 10px solid gray;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  font-family: "Cinzel", serif;
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
+.secret {
+}
